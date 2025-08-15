@@ -9,167 +9,119 @@
 #include "ThreePhasePWM.hpp"
 #include <cstdio>
 
-
-extern TIM_HandleTypeDef htim1; // 3相PWMに使うタイマ
-extern TIM_HandleTypeDef htim2; // 1相PWMに使うタイマ
-extern TIM_HandleTypeDef htim7; // 割り込み用タイマ
-extern TIM_HandleTypeDef htim10; // 割り込み用タイマ
+// ==== 外部ハンドル ====
+extern TIM_HandleTypeDef htim1; 
+extern TIM_HandleTypeDef htim2; 
+extern TIM_HandleTypeDef htim7; 
 extern UART_HandleTypeDef huart2;
-extern SPI_HandleTypeDef hspi2;  // SPI2 = Master
-extern SPI_HandleTypeDef hspi3;  // SPI3 = Slave
+extern SPI_HandleTypeDef hspi2;  // Master
+extern SPI_HandleTypeDef hspi3;  // Slave
 
+// ==== バッファ ====
+#define SPI_LEN 2
+uint8_t masterTx[SPI_LEN] = {10,20};
+uint8_t masterRx[SPI_LEN] = {0};
+uint8_t slaveTx[SPI_LEN]  = {1,2};
+uint8_t slaveRx[SPI_LEN]  = {0};
 
-// 送受信バッファ例
-uint8_t masterTx[5] = { 10, 20, 30, 40, 50};
-uint8_t masterRx[5] = { 0 };
-uint8_t slaveTx[5]  = { 1, 2, 3, 4, 5};
-uint8_t slaveRx[5]  = { 0 };
-
-
-// ---- LED_PWM ----
+// ==== オブジェクト ====
 LED_PWM led_pwm(&htim2, TIM_CHANNEL_1);
-
-// ---- ThreePhasePWM ----
 ThreePhasePWM phaseUVW(&htim1, TIM_CHANNEL_1, TIM_CHANNEL_2, TIM_CHANNEL_3);
-
-// ---- LED ----
 LED led1(GPIOA,GPIO_PIN_5);
-
-// ---- UART ----
 UART_Handler uartCommunication(&huart2);
 
-// ---- SPI Master ----
-SPI_Master spiMaster(&hspi2, GPIOB, GPIO_PIN_12, &uartCommunication);
-// SPI2のCSピンをLEDとして使用
-// SPI_Masterのコンストラクタは、SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, LED* led
-// ここで、SPI2のCSピンをGPIOBのピン12に設定し、LEDとして使用します。
-// SPI_Masterのインスタンスを作成します。SPI2を使用し、CSピンはGPIOBのピン12を使用します。
+// フラグで DMA 再送信管理
+volatile bool masterReady = false;
+volatile bool slaveReady  = false;
 
-// ---- SPI Slave ----
-SPI_Slave spiSlave(&hspi3, &uartCommunication, &led1);
+// ==== プロトタイプ ====
+void StartMasterTransfer(void);
+void StartSlaveTransfer(void);
+void PrintBuffer(const char* label, uint8_t* buf, size_t len);
 
-// ---- 割り込みハンドラ ----
-volatile bool masterSpiBusy = false; // マスターSPIがビジー状態かどうかを示すフラグ
-// タイマー割り込みハンドラ
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim->Instance == TIM2)
-    {
+// ==== 送受信開始関数 ====
+void StartMasterTransfer(void) {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); // CS Low
+    HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, SPI_LEN);
+}
+
+void StartSlaveTransfer(void) {
+    HAL_SPI_TransmitReceive_DMA(&hspi3, slaveTx, slaveRx, SPI_LEN);
+}
+
+// ==== バッファ内容をUART出力 ====
+void PrintBuffer(const char* label, uint8_t* buf, size_t len) {
+    char msg[64];
+    int pos = snprintf(msg, sizeof(msg), "%s:", label);
+    for (size_t i = 0; i < len; i++) {
+        pos += snprintf(msg + pos, sizeof(msg) - pos, " %d", buf[i]);
+    }
+    snprintf(msg + pos, sizeof(msg) - pos, "\r\n");
+    uartCommunication.sendMessage(msg);
+}
+
+// ==== タイマ割り込み ====
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+    if (htim->Instance == TIM2) {
         HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
     }
-    if (htim == &htim7)
-    {
-        led_pwm.update();  // PWMのdutyをテーブルに従って更新
+    if (htim == &htim7) {
+        led_pwm.update();
         phaseUVW.update();
     }
 }
 
-// SPI送受信完了コールバック
-void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
-{
-    if (hspi->Instance == SPI2)
-    {
+// ==== SPI送受信完了コールバック ====
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
+    if (hspi->Instance == SPI2) { // Master
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // CS High
-        
-        // UARTでマスター受信表示
-        char buf[64];
-        sprintf(buf, "[Master] Rx: %d %d %d %d %d\r\n",
-                masterRx[0], masterRx[1], masterRx[2], masterRx[3], masterRx[4]);
-        uartCommunication.sendMessage(buf); // 「HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 100);」
-
+        PrintBuffer("[Master] Rx", masterRx, SPI_LEN);
         // 次回送信データを更新
-        for (int i = 0; i < 5; i++) {
-            masterTx[i] = masterRx[i] + 1;
-        }
-
-        // 次回DMA開始
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); // CS Low
-        HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, 5);
+        for(int i=0;i<SPI_LEN;i++) masterTx[i] = masterRx[i]+1;
+        masterReady = true; // 再送信は loop で
     }
-    else if (hspi->Instance == SPI3) // スレーブ側
-    {
-        // 次回送信データを更新
-        for (int i = 0; i < 5; i++) {
-            slaveTx[i] = slaveRx[i] + 1;
-        }
- 
-        // 次の受信を開始（再エントリ）
-         // 次回DMA開始
-        HAL_SPI_TransmitReceive_DMA(&hspi3, slaveTx, slaveRx, 5);
-        // HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5); // HAL_SPI_TransmitReceive(&hspi3, slaveTx, slaveRx, 5, HAL_MAX_DELAY);
-
-        // UARTでスレーブ受信表示
-        char buf[64];
-        sprintf(buf, "[Slave] Rx: %d %d %d %d %d\r\n",
-                slaveRx[0], slaveRx[1], slaveRx[2], slaveRx[3], slaveRx[4]);
-        uartCommunication.sendMessage(buf);
+    else if (hspi->Instance == SPI3) { // Slave
+        PrintBuffer("[Slave] Rx", slaveRx, SPI_LEN);
+        for(int i=0;i<SPI_LEN;i++) slaveTx[i] = slaveRx[i]+1;
+        slaveReady = true;
     }
-
-    // if(hspi->Instance == SPI2) {
-    //     spiMaster.onTransmitReceiveComplete_Callback();
-    // }
-    // else if(hspi->Instance == SPI3) {
-    //     spiSlave.onReceiveTransmitComplete_Callback();
-    // }
 }
 
-// SPIエラーコールバック
-void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi)
-{
+// ==== SPIエラーコールバック ====
+void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi) {
     if(hspi->Instance == SPI2) {
-        spiMaster.masterError_Callback();
-        HAL_SPI_Abort(hspi);
-        HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, 5);
-        // HAL_SPI_Abort(hspi); // 一旦停止
-        // HAL_SPI_TransmitReceive_IT(&hspi2, masterTx, masterRx, 5); // 再開
+        uartCommunication.sendMessage("Master SPI Error\r\n");
+        HAL_SPI_Abort(&hspi2);
+        masterReady = true; // 再送信フラグ
     }
     if(hspi->Instance == SPI3) {
-        spiSlave.slaveError_Callback();
-        HAL_SPI_Abort(hspi);
-        HAL_SPI_TransmitReceive_DMA(&hspi3, slaveTx, slaveRx, 5);
-        // HAL_SPI_Abort(hspi); // 一旦停止
-        // HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5); // 再開
+        uartCommunication.sendMessage("Slave SPI Error\r\n");
+        HAL_SPI_Abort(&hspi3);
+        slaveReady = true;
     }
 }
 
-
-// ---- setupとloop ----
-// setupは初期化、loopはメインループ
-void setup()
-{
-    // LED
+// ==== setupとloop ====
+void setup() {
     led1.off();
+    led_pwm.start();
+    phaseUVW.start();
 
-    // PWM
-    led_pwm.start(); // PWMを開始
-    phaseUVW.start(); // 3相PWMを開始
+    // 先に Slave DMA 待機
+    StartSlaveTransfer();
 
-    // SPI Slave 受信開始：「HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5);」
-    // spiSlave.beginReceiveTransmit(slaveTx, slaveRx, 5); // SPIスレーブの受信開始
-    HAL_SPI_TransmitReceive_DMA(&hspi3, slaveTx, slaveRx, 5);
+    HAL_Delay(1);
 
-    // SPI Master 受信開始
-    // spiMaster.beginTransmitReceive(masterTx, masterRx, 5); // SPIマスターの受信開始
-    // マスターDMA開始（最初はCS Lowしてから）
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-    HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, 5);
+    // Master DMA は CS Low して開始
+    StartMasterTransfer();
 
-    // UARTで初期化メッセージを送信
     uartCommunication.sendMessage("UART Initialized\r\n");
 
-    // タイマ割り込み開始
     HAL_TIM_Base_Start_IT(&htim7);
 }
 
-void loop(){ 
-    // led_pwm.update();
-    // HAL_Delay(100); // dutyが徐々に変化するのを観察
-    // led1.toggle(); 
-    // led1.on(); // LEDを点灯
-    // HAL_Delay(1000); // 1秒待機
-    // led1.off(); // LEDを消灯
-    // HAL_Delay(1000); // 1秒待機
-
-    // uartCommunication.sendMessage("Hello, KIRATO4.0!\r\n"); // UARTで文字列を送信
-    // HAL_Delay(10000); // 10秒待機    
-    }
+void loop() {
+    // DMA 再送信はフラグで管理
+    if (slaveReady) { StartSlaveTransfer(); slaveReady=false; }
+    if (masterReady){ StartMasterTransfer(); masterReady=false; }
+}

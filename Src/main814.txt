@@ -1,6 +1,7 @@
-// ODriveのSPIスレーブの実装
-センサーの値取得みたいに「最新値を読む」なのか、
-それとも「コマンド送ったら返事が来る」なのか
+SPI
+SPI2: Master, Polling送信
+SPI3: Slave, 割り込み受信
+
 
 #include "main.hpp"
 #include "stm32f4xx_hal.h"
@@ -17,7 +18,6 @@
 extern TIM_HandleTypeDef htim1; // 3相PWMに使うタイマ
 extern TIM_HandleTypeDef htim2; // 1相PWMに使うタイマ
 extern TIM_HandleTypeDef htim7; // 割り込み用タイマ
-extern TIM_HandleTypeDef htim10; // 割り込み用タイマ
 extern UART_HandleTypeDef huart2;
 extern SPI_HandleTypeDef hspi2;  // SPI2 = Master
 extern SPI_HandleTypeDef hspi3;  // SPI3 = Slave
@@ -53,8 +53,6 @@ SPI_Master spiMaster(&hspi2, GPIOB, GPIO_PIN_12, &uartCommunication);
 SPI_Slave spiSlave(&hspi3, &uartCommunication, &led1);
 
 // ---- 割り込みハンドラ ----
-volatile bool masterSpiBusy = false; // マスターSPIがビジー状態かどうかを示すフラグ
-// タイマー割り込みハンドラ
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM2)
@@ -66,48 +64,28 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         led_pwm.update();  // PWMのdutyをテーブルに従って更新
         phaseUVW.update();
     }
-    if (htim == &htim10)
-    {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); // CS Low
-        HAL_SPI_TransmitReceive_IT(&hspi2, masterTx, masterRx, 5);
-    }
 }
 
 // SPI送受信完了コールバック
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
 {
-    if (hspi->Instance == SPI2)
+    if (hspi->Instance == SPI3) // スレーブ側
     {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // CS High
-        
-        // UARTでマスター受信表示
+        // UARTでスレーブ受信表示
         char buf[64];
-        sprintf(buf, "[Master] Rx: %d %d %d %d %d\r\n",
-                masterRx[0], masterRx[1], masterRx[2], masterRx[3], masterRx[4]);
-        uartCommunication.sendMessage(buf); // 「HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 100);」
+        sprintf(buf, "[Slave] Rx: %d %d %d %d %d\r\n",
+                slaveRx[0], slaveRx[1], slaveRx[2], slaveRx[3], slaveRx[4]);
+        HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 100);
 
-        // 次回送信データを更新
-        for (int i = 0; i < 5; i++) {
-            masterTx[i] = masterRx[i] + 1;
-        }
-    }
-    else if (hspi->Instance == SPI3) // スレーブ側
-    {
         // 次回送信データを更新
         for (int i = 0; i < 5; i++) {
             slaveTx[i] = slaveRx[i] + 1;
         }
 
+
         // 次の受信を開始（再エントリ）
         HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5); // HAL_SPI_TransmitReceive(&hspi3, slaveTx, slaveRx, 5, HAL_MAX_DELAY);
-        
-        // UARTでスレーブ受信表示
-        char buf[64];
-        sprintf(buf, "[Slave] Rx: %d %d %d %d %d\r\n",
-                slaveRx[0], slaveRx[1], slaveRx[2], slaveRx[3], slaveRx[4]);
-        uartCommunication.sendMessage(buf);
     }
-
     // if(hspi->Instance == SPI2) {
     //     spiMaster.onTransmitReceiveComplete_Callback();
     // }
@@ -121,10 +99,8 @@ void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi)
 {
     if(hspi->Instance == SPI2) {
         spiMaster.masterError_Callback();
-        // HAL_SPI_Abort(hspi); // 一旦停止
-        // HAL_SPI_TransmitReceive_IT(&hspi2, masterTx, masterRx, 5); // 再開
     }
-    if(hspi->Instance == SPI3) {
+    else if(hspi->Instance == SPI3) {
         spiSlave.slaveError_Callback();
         HAL_SPI_Abort(hspi); // 一旦停止
         HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5); // 再開
@@ -143,18 +119,29 @@ void setup()
     led_pwm.start(); // PWMを開始
     phaseUVW.start(); // 3相PWMを開始
 
-    // SPI Slave 受信開始：「HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5);」
-    spiSlave.beginReceiveTransmit(slaveTx, slaveRx, 5); // SPIスレーブの受信開始
+    // 送信データを更新（例として +1 してみる）
+    for (int i = 0; i < 5; i++) {
+        slaveTx[i] = i+1;
+    }
+    for (int i = 5; i >0; i--) {
+        slaveRx[i] = i-1; // 受信データをシフト
+    }
 
-    // SPI Master 受信開始
-    spiMaster.beginTransmitReceive(masterTx, masterRx, 5); // SPIマスターの受信開始
+    // // SPI Slave 受信開始
+    // spiSlave.beginReceiveTransmit(slaveTx, slaveRx, 5); // SPIスレーブの受信開始
+
+    // スレーブの初回受信開始
+    HAL_SPI_TransmitReceive_IT(&hspi3, slaveTx, slaveRx, 5);
+
+
+    // // SPI Master 送信開始
+    // spiMaster.beginTransmitReceive(masterTx, masterRx, 5); // SPIマスターの送信開始
 
     // UARTで初期化メッセージを送信
     uartCommunication.sendMessage("UART Initialized\r\n");
 
     // タイマ割り込み開始
-    HAL_TIM_Base_Start_IT(&htim7);
-    HAL_TIM_Base_Start_IT(&htim10); // 割り込みタイマを開始
+    // HAL_TIM_Base_Start_IT(&htim7);
 }
 
 void loop(){ 
@@ -166,6 +153,23 @@ void loop(){
     // led1.off(); // LEDを消灯
     // HAL_Delay(1000); // 1秒待機
 
-    // uartCommunication.sendMessage("Hello, KIRATO4.0!\r\n"); // UARTで文字列を送信
-    // HAL_Delay(10000); // 10秒待機    
-    }
+    uartCommunication.sendMessage("Hello, KIRATO4.0!\r\n"); // UARTで文字列を送信
+    // HAL_Delay(10000); // 10秒待機
+
+    // --- マスター送受信 ---
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); // CS Low
+    HAL_SPI_TransmitReceive(&hspi2, masterTx, masterRx, 5, 100); // HAL_SPI_TransmitReceive(&hspi2, masterTx, masterRx, 5, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);   // CS High
+    
+    char buf[64];
+    sprintf(buf, "Master Rx: %d %d %d %d %d\r\n", 
+            masterRx[0], masterRx[1], masterRx[2], masterRx[3], masterRx[4]);
+    uartCommunication.sendMessage(buf);
+
+    // 次の送信データを変更（デバッグ用）
+    for (int i = 0; i < 5; i++) masterTx[i]++;
+
+    HAL_Delay(1000); // 1秒ごとに送信
+    
+}
+
