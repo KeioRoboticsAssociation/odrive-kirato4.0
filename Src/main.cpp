@@ -18,10 +18,10 @@ extern SPI_HandleTypeDef hspi2;  // Master
 extern SPI_HandleTypeDef hspi3;  // Slave
 
 // ==== バッファ ====
-#define SPI_LEN 2
-uint8_t masterTx[SPI_LEN] = {10,20};
+#define SPI_LEN 1
+uint8_t masterTx[SPI_LEN] = {1};
 uint8_t masterRx[SPI_LEN] = {0};
-uint8_t slaveTx[SPI_LEN]  = {1,2};
+uint8_t slaveTx[SPI_LEN]  = {0};
 uint8_t slaveRx[SPI_LEN]  = {0};
 
 // ==== オブジェクト ====
@@ -42,7 +42,8 @@ void PrintBuffer(const char* label, uint8_t* buf, size_t len);
 // ==== 送受信開始関数 ====
 void StartMasterTransfer(void) {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); // CS Low
-    HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, SPI_LEN);
+    HAL_SPI_TransmitReceive_IT(&hspi2, masterTx, masterRx, SPI_LEN);
+    // HAL_SPI_TransmitReceive_DMA(&hspi2, masterTx, masterRx, SPI_LEN);
 }
 
 void StartSlaveTransfer(void) {
@@ -75,12 +76,22 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
     if (hspi->Instance == SPI2) { // Master
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // CS High
+        // // UARTでマスター受信表示
+        // char buf[64];
+        // sprintf(buf, "[Master] Rx: %d %d\r\n",
+        //         masterRx[0], masterRx[1]);
+        // uartCommunication.sendMessage(buf); 
         PrintBuffer("[Master] Rx", masterRx, SPI_LEN);
         // 次回送信データを更新
         for(int i=0;i<SPI_LEN;i++) masterTx[i] = masterRx[i]+1;
         masterReady = true; // 再送信は loop で
     }
     else if (hspi->Instance == SPI3) { // Slave
+        // // UARTでスレーブ受信表示
+        // char buf[64];
+        // sprintf(buf, "[Slave] Rx: %d %d\r\n",
+        //         slaveRx[0], slaveRx[1]);
+        // uartCommunication.sendMessage(buf);
         PrintBuffer("[Slave] Rx", slaveRx, SPI_LEN);
         for(int i=0;i<SPI_LEN;i++) slaveTx[i] = slaveRx[i]+1;
         slaveReady = true;
@@ -123,5 +134,5 @@ void setup() {
 void loop() {
     // DMA 再送信はフラグで管理
     if (slaveReady) { StartSlaveTransfer(); slaveReady=false; }
-    if (masterReady){ StartMasterTransfer(); masterReady=false; }
+    if (masterReady){ HAL_Delay(2); StartMasterTransfer(); masterReady=false; }
 }

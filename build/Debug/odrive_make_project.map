@@ -2094,8 +2094,6 @@ Discarded input sections
                 0x00000000      0x108 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.HAL_SPI_Receive_IT
                 0x00000000      0x130 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.HAL_SPI_TransmitReceive_IT
-                0x00000000      0x11c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.HAL_SPI_Transmit_DMA
                 0x00000000      0x164 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.HAL_SPI_Receive_DMA
@@ -2130,14 +2128,6 @@ Discarded input sections
                 0x00000000       0xd4 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMARxAbortCallback
                 0x00000000       0xc0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.SPI_2linesRxISR_8BIT
-                0x00000000       0x64 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.SPI_2linesTxISR_8BIT
-                0x00000000       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.SPI_2linesRxISR_16BIT
-                0x00000000       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.SPI_2linesTxISR_16BIT
-                0x00000000       0x5e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_RxISR_8BIT
                 0x00000000       0x4a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_RxISR_16BIT
@@ -2146,8 +2136,6 @@ Discarded input sections
                 0x00000000       0x46 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_TxISR_16BIT
                 0x00000000       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .text.SPI_CloseRxTx_ISR
-                0x00000000       0xe8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_CloseRx_ISR
                 0x00000000       0x7e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_CloseTx_ISR
@@ -4901,7 +4889,7 @@ LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x08000000                g_pfnVectors
                 0x080001c4                        . = ALIGN (0x4)
 
-.text           0x080001d0     0x8008
+.text           0x080001d0     0x8398
                 0x080001d0                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001d0       0x40 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -4983,689 +4971,703 @@ LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x08001184                HAL_SPI_ErrorCallback
  .text.setup    0x080011f4       0x50 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
                 0x080011f4                setup
- .text.loop     0x08001244       0x38 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+ .text.loop     0x08001244       0x40 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
                 0x08001244                loop
  .text._Z41__static_initialization_and_destruction_0ii
-                0x0800127c       0x70 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x08001284       0x70 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
  .text._GLOBAL__sub_I_masterTx
-                0x080012ec       0x10 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x080012f4       0x10 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
  .text._ZN3LEDC2EP12GPIO_TypeDeft
-                0x080012fc       0x28 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
-                0x080012fc                LED::LED(GPIO_TypeDef*, unsigned short)
-                0x080012fc                LED::LED(GPIO_TypeDef*, unsigned short)
+                0x08001304       0x28 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
+                0x08001304                LED::LED(GPIO_TypeDef*, unsigned short)
+                0x08001304                LED::LED(GPIO_TypeDef*, unsigned short)
  .text._ZN3LED3offEv
-                0x08001324       0x20 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
-                0x08001324                LED::off()
+                0x0800132c       0x20 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
+                0x0800132c                LED::off()
  .text._ZN7LED_PWMC2EP17TIM_HandleTypeDefm
-                0x08001344       0x2c CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
-                0x08001344                LED_PWM::LED_PWM(TIM_HandleTypeDef*, unsigned long)
-                0x08001344                LED_PWM::LED_PWM(TIM_HandleTypeDef*, unsigned long)
+                0x0800134c       0x2c CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+                0x0800134c                LED_PWM::LED_PWM(TIM_HandleTypeDef*, unsigned long)
+                0x0800134c                LED_PWM::LED_PWM(TIM_HandleTypeDef*, unsigned long)
  .text._ZN7LED_PWM5startEv
-                0x08001370       0x20 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
-                0x08001370                LED_PWM::start()
+                0x08001378       0x20 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+                0x08001378                LED_PWM::start()
  .text._ZN7LED_PWM6updateEv
-                0x08001390      0x134 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
-                0x08001390                LED_PWM::update()
+                0x08001398      0x134 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+                0x08001398                LED_PWM::update()
  .text._ZN13ThreePhasePWMC2EP17TIM_HandleTypeDefmmm
-                0x080014c4       0x3c CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
-                0x080014c4                ThreePhasePWM::ThreePhasePWM(TIM_HandleTypeDef*, unsigned long, unsigned long, unsigned long)
-                0x080014c4                ThreePhasePWM::ThreePhasePWM(TIM_HandleTypeDef*, unsigned long, unsigned long, unsigned long)
+                0x080014cc       0x3c CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+                0x080014cc                ThreePhasePWM::ThreePhasePWM(TIM_HandleTypeDef*, unsigned long, unsigned long, unsigned long)
+                0x080014cc                ThreePhasePWM::ThreePhasePWM(TIM_HandleTypeDef*, unsigned long, unsigned long, unsigned long)
  .text._ZN13ThreePhasePWM5startEv
-                0x08001500       0x40 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
-                0x08001500                ThreePhasePWM::start()
+                0x08001508       0x40 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+                0x08001508                ThreePhasePWM::start()
  .text._ZN13ThreePhasePWM7setDutyEmf
-                0x08001540       0xa6 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
-                0x08001540                ThreePhasePWM::setDuty(unsigned long, float)
- *fill*         0x080015e6        0x2 
+                0x08001548       0xa6 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+                0x08001548                ThreePhasePWM::setDuty(unsigned long, float)
+ *fill*         0x080015ee        0x2 
  .text._ZN13ThreePhasePWM6updateEv
-                0x080015e8      0x1e4 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
-                0x080015e8                ThreePhasePWM::update()
+                0x080015f0      0x1e4 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+                0x080015f0                ThreePhasePWM::update()
  .text._ZN12UART_HandlerC2EP20__UART_HandleTypeDef
-                0x080017cc       0x1e CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
-                0x080017cc                UART_Handler::UART_Handler(__UART_HandleTypeDef*)
-                0x080017cc                UART_Handler::UART_Handler(__UART_HandleTypeDef*)
+                0x080017d4       0x1e CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
+                0x080017d4                UART_Handler::UART_Handler(__UART_HandleTypeDef*)
+                0x080017d4                UART_Handler::UART_Handler(__UART_HandleTypeDef*)
  .text._ZN12UART_Handler11sendMessageEPKc
-                0x080017ea       0x2c CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
-                0x080017ea                UART_Handler::sendMessage(char const*)
- .text.main     0x08001816       0x3e CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
-                0x08001816                main
+                0x080017f2       0x2c CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
+                0x080017f2                UART_Handler::sendMessage(char const*)
+ .text.main     0x0800181e       0x3e CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+                0x0800181e                main
  .text.SystemClock_Config
-                0x08001854       0xd8 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
-                0x08001854                SystemClock_Config
+                0x0800185c       0xd8 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+                0x0800185c                SystemClock_Config
  .text.Error_Handler
-                0x0800192c        0xc CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
-                0x0800192c                Error_Handler
+                0x08001934        0xc CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+                0x08001934                Error_Handler
  .text.MX_GPIO_Init
-                0x08001938      0x10c CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
-                0x08001938                MX_GPIO_Init
+                0x08001940      0x10c CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
+                0x08001940                MX_GPIO_Init
  .text.MX_DMA_Init
-                0x08001a44       0x70 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
-                0x08001a44                MX_DMA_Init
+                0x08001a4c       0x70 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
+                0x08001a4c                MX_DMA_Init
  .text.MX_SPI2_Init
-                0x08001ab4       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
-                0x08001ab4                MX_SPI2_Init
+                0x08001abc       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+                0x08001abc                MX_SPI2_Init
  .text.MX_SPI3_Init
-                0x08001b20       0x64 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
-                0x08001b20                MX_SPI3_Init
+                0x08001b28       0x64 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+                0x08001b28                MX_SPI3_Init
  .text.HAL_SPI_MspInit
-                0x08001b84      0x3a8 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
-                0x08001b84                HAL_SPI_MspInit
+                0x08001b8c      0x3a8 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+                0x08001b8c                HAL_SPI_MspInit
  .text.MX_TIM1_Init
-                0x08001f2c      0x170 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x08001f2c                MX_TIM1_Init
+                0x08001f34      0x170 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x08001f34                MX_TIM1_Init
  .text.MX_TIM2_Init
-                0x0800209c       0xec CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x0800209c                MX_TIM2_Init
+                0x080020a4       0xec CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x080020a4                MX_TIM2_Init
  .text.MX_TIM6_Init
-                0x08002188       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x08002188                MX_TIM6_Init
+                0x08002190       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x08002190                MX_TIM6_Init
  .text.MX_TIM7_Init
-                0x080021f4       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x080021f4                MX_TIM7_Init
+                0x080021fc       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x080021fc                MX_TIM7_Init
  .text.MX_TIM10_Init
-                0x08002260       0x48 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x08002260                MX_TIM10_Init
+                0x08002268       0x48 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x08002268                MX_TIM10_Init
  .text.HAL_TIM_Base_MspInit
-                0x080022a8      0x12c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x080022a8                HAL_TIM_Base_MspInit
+                0x080022b0      0x12c CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x080022b0                HAL_TIM_Base_MspInit
  .text.HAL_TIM_MspPostInit
-                0x080023d4       0xfc CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
-                0x080023d4                HAL_TIM_MspPostInit
+                0x080023dc       0xfc CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+                0x080023dc                HAL_TIM_MspPostInit
  .text.MX_USART2_UART_Init
-                0x080024d0       0x54 CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
-                0x080024d0                MX_USART2_UART_Init
+                0x080024d8       0x54 CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
+                0x080024d8                MX_USART2_UART_Init
  .text.HAL_UART_MspInit
-                0x08002524       0x90 CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
-                0x08002524                HAL_UART_MspInit
+                0x0800252c       0x90 CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
+                0x0800252c                HAL_UART_MspInit
  .text.NMI_Handler
-                0x080025b4        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025b4                NMI_Handler
- .text.HardFault_Handler
                 0x080025bc        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025bc                HardFault_Handler
- .text.MemManage_Handler
+                0x080025bc                NMI_Handler
+ .text.HardFault_Handler
                 0x080025c4        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025c4                MemManage_Handler
- .text.BusFault_Handler
+                0x080025c4                HardFault_Handler
+ .text.MemManage_Handler
                 0x080025cc        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025cc                BusFault_Handler
- .text.UsageFault_Handler
+                0x080025cc                MemManage_Handler
+ .text.BusFault_Handler
                 0x080025d4        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025d4                UsageFault_Handler
+                0x080025d4                BusFault_Handler
+ .text.UsageFault_Handler
+                0x080025dc        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080025dc                UsageFault_Handler
  .text.SVC_Handler
-                0x080025dc        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025dc                SVC_Handler
+                0x080025e4        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080025e4                SVC_Handler
  .text.DebugMon_Handler
-                0x080025ea        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025ea                DebugMon_Handler
+                0x080025f2        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080025f2                DebugMon_Handler
  .text.PendSV_Handler
-                0x080025f8        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080025f8                PendSV_Handler
+                0x08002600        0xe CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08002600                PendSV_Handler
  .text.SysTick_Handler
-                0x08002606        0xc CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002606                SysTick_Handler
- *fill*         0x08002612        0x2 
+                0x0800260e        0xc CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0800260e                SysTick_Handler
+ *fill*         0x0800261a        0x2 
  .text.DMA1_Stream0_IRQHandler
-                0x08002614       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002614                DMA1_Stream0_IRQHandler
+                0x0800261c       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0800261c                DMA1_Stream0_IRQHandler
  .text.DMA1_Stream3_IRQHandler
-                0x08002628       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002628                DMA1_Stream3_IRQHandler
+                0x08002630       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08002630                DMA1_Stream3_IRQHandler
  .text.DMA1_Stream4_IRQHandler
-                0x0800263c       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x0800263c                DMA1_Stream4_IRQHandler
+                0x08002644       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08002644                DMA1_Stream4_IRQHandler
  .text.DMA1_Stream5_IRQHandler
-                0x08002650       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002650                DMA1_Stream5_IRQHandler
+                0x08002658       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08002658                DMA1_Stream5_IRQHandler
  .text.TIM1_UP_TIM10_IRQHandler
-                0x08002664       0x1c CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002664                TIM1_UP_TIM10_IRQHandler
+                0x0800266c       0x1c CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0800266c                TIM1_UP_TIM10_IRQHandler
  .text.TIM2_IRQHandler
-                0x08002680       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002680                TIM2_IRQHandler
+                0x08002688       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08002688                TIM2_IRQHandler
  .text.SPI2_IRQHandler
-                0x08002694       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08002694                SPI2_IRQHandler
+                0x0800269c       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0800269c                SPI2_IRQHandler
  .text.SPI3_IRQHandler
-                0x080026a8       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080026a8                SPI3_IRQHandler
+                0x080026b0       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080026b0                SPI3_IRQHandler
  .text.TIM7_IRQHandler
-                0x080026bc       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080026bc                TIM7_IRQHandler
+                0x080026c4       0x14 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080026c4                TIM7_IRQHandler
  .text.HAL_MspInit
-                0x080026d0       0x50 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
-                0x080026d0                HAL_MspInit
+                0x080026d8       0x50 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x080026d8                HAL_MspInit
  .text.HAL_SPI_Init
-                0x08002720      0x112 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002720                HAL_SPI_Init
- *fill*         0x08002832        0x2 
+                0x08002728      0x112 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002728                HAL_SPI_Init
+ *fill*         0x0800283a        0x2 
+ .text.HAL_SPI_TransmitReceive_IT
+                0x0800283c      0x11c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x0800283c                HAL_SPI_TransmitReceive_IT
  .text.HAL_SPI_TransmitReceive_DMA
-                0x08002834      0x1f8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002834                HAL_SPI_TransmitReceive_DMA
+                0x08002958      0x1f8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002958                HAL_SPI_TransmitReceive_DMA
  .text.HAL_SPI_Abort
-                0x08002a2c      0x1d8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002a2c                HAL_SPI_Abort
+                0x08002b50      0x1d8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002b50                HAL_SPI_Abort
  .text.HAL_SPI_IRQHandler
-                0x08002c04      0x1e8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002c04                HAL_SPI_IRQHandler
+                0x08002d28      0x1e8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002d28                HAL_SPI_IRQHandler
  .text.HAL_SPI_RxCpltCallback
-                0x08002dec       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002dec                HAL_SPI_RxCpltCallback
+                0x08002f10       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002f10                HAL_SPI_RxCpltCallback
  .text.HAL_SPI_RxHalfCpltCallback
-                0x08002e00       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002e00                HAL_SPI_RxHalfCpltCallback
+                0x08002f24       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002f24                HAL_SPI_RxHalfCpltCallback
  .text.HAL_SPI_TxRxHalfCpltCallback
-                0x08002e14       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08002e14                HAL_SPI_TxRxHalfCpltCallback
+                0x08002f38       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002f38                HAL_SPI_TxRxHalfCpltCallback
  .text.SPI_DMAReceiveCplt
-                0x08002e28       0xa8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002f4c       0xa8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMATransmitReceiveCplt
-                0x08002ed0       0x90 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08002ff4       0x90 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMAHalfReceiveCplt
-                0x08002f60       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08003084       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMAHalfTransmitReceiveCplt
-                0x08002f7c       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x080030a0       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMAError
-                0x08002f98       0x40 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x080030bc       0x40 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_DMAAbortOnError
-                0x08002fd8       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x080030fc       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .text.SPI_2linesRxISR_8BIT
+                0x08003124       0x64 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .text.SPI_2linesTxISR_8BIT
+                0x08003188       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .text.SPI_2linesRxISR_16BIT
+                0x080031e8       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .text.SPI_2linesTxISR_16BIT
+                0x08003248       0x5e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ *fill*         0x080032a6        0x2 
  .text.SPI_WaitFlagStateUntilTimeout
-                0x08003000      0x110 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x080032a8      0x110 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_EndRxTransaction
-                0x08003110       0xca CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- *fill*         0x080031da        0x2 
+                0x080033b8       0xca CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ *fill*         0x08003482        0x2 
  .text.SPI_EndRxTxTransaction
-                0x080031dc       0xa8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08003484       0xa8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .text.SPI_CloseRxTx_ISR
+                0x0800352c       0xe8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_AbortRx_ISR
-                0x08003284       0x90 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08003614       0x90 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.SPI_AbortTx_ISR
-                0x08003314       0x3c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x080036a4       0x3c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
  .text.HAL_RCC_ClockConfig
-                0x08003350      0x1cc CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08003350                HAL_RCC_ClockConfig
+                0x080036e0      0x1cc CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080036e0                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetHCLKFreq
-                0x0800351c       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x0800351c                HAL_RCC_GetHCLKFreq
+                0x080038ac       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080038ac                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x08003534       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08003534                HAL_RCC_GetPCLK1Freq
+                0x080038c4       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080038c4                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x0800355c       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x0800355c                HAL_RCC_GetPCLK2Freq
+                0x080038ec       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080038ec                HAL_RCC_GetPCLK2Freq
  .text.HAL_RCC_GetSysClockFreq
-                0x08003584      0x460 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
-                0x08003584                HAL_RCC_GetSysClockFreq
+                0x08003914      0x460 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+                0x08003914                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_OscConfig
-                0x080039e4      0x53c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
-                0x080039e4                HAL_RCC_OscConfig
+                0x08003d74      0x53c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+                0x08003d74                HAL_RCC_OscConfig
  .text.HAL_GPIO_Init
-                0x08003f20      0x328 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08003f20                HAL_GPIO_Init
+                0x080042b0      0x328 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080042b0                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08004248       0x32 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08004248                HAL_GPIO_WritePin
+                0x080045d8       0x32 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080045d8                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x0800427a       0x34 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x0800427a                HAL_GPIO_TogglePin
- *fill*         0x080042ae        0x2 
+                0x0800460a       0x34 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x0800460a                HAL_GPIO_TogglePin
+ *fill*         0x0800463e        0x2 
  .text.HAL_DMA_Init
-                0x080042b0      0x15c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x080042b0                HAL_DMA_Init
+                0x08004640      0x15c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08004640                HAL_DMA_Init
  .text.HAL_DMA_Start_IT
-                0x0800440c       0xb0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x0800440c                HAL_DMA_Start_IT
+                0x0800479c       0xb0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x0800479c                HAL_DMA_Start_IT
  .text.HAL_DMA_Abort
-                0x080044bc       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x080044bc                HAL_DMA_Abort
+                0x0800484c       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x0800484c                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x0800459c       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x0800459c                HAL_DMA_Abort_IT
+                0x0800492c       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x0800492c                HAL_DMA_Abort_IT
  .text.HAL_DMA_IRQHandler
-                0x080045e0      0x314 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x080045e0                HAL_DMA_IRQHandler
+                0x08004970      0x314 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08004970                HAL_DMA_IRQHandler
  .text.DMA_SetConfig
-                0x080048f4       0x5c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08004c84       0x5c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.DMA_CalcBaseAndBitshift
-                0x08004950       0x6c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08004ce0       0x6c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.DMA_CheckFifoParam
-                0x080049bc       0xf8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08004d4c       0xf8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.__NVIC_SetPriorityGrouping
-                0x08004ab4       0x48 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004e44       0x48 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x08004afc       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004e8c       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_EnableIRQ
-                0x08004b18       0x3c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004ea8       0x3c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08004b54       0x54 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004ee4       0x54 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08004ba8       0x66 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- *fill*         0x08004c0e        0x2 
+                0x08004f38       0x66 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ *fill*         0x08004f9e        0x2 
  .text.SysTick_Config
-                0x08004c10       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004fa0       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08004c54       0x16 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08004c54                HAL_NVIC_SetPriorityGrouping
+                0x08004fe4       0x16 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004fe4                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08004c6a       0x38 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08004c6a                HAL_NVIC_SetPriority
+                0x08004ffa       0x38 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08004ffa                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08004ca2       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08004ca2                HAL_NVIC_EnableIRQ
+                0x08005032       0x1c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08005032                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08004cbe       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08004cbe                HAL_SYSTICK_Config
- *fill*         0x08004cd6        0x2 
+                0x0800504e       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x0800504e                HAL_SYSTICK_Config
+ *fill*         0x08005066        0x2 
  .text.HAL_Init
-                0x08004cd8       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08004cd8                HAL_Init
+                0x08005068       0x44 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08005068                HAL_Init
  .text.HAL_InitTick
-                0x08004d1c       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08004d1c                HAL_InitTick
+                0x080050ac       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080050ac                HAL_InitTick
  .text.HAL_IncTick
-                0x08004d7c       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08004d7c                HAL_IncTick
+                0x0800510c       0x28 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x0800510c                HAL_IncTick
  .text.HAL_GetTick
-                0x08004da4       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08004da4                HAL_GetTick
+                0x08005134       0x18 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08005134                HAL_GetTick
  .text.HAL_Delay
-                0x08004dbc       0x48 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08004dbc                HAL_Delay
+                0x0800514c       0x48 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x0800514c                HAL_Delay
  .text.HAL_TIM_Base_Init
-                0x08004e04       0x9e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08004e04                HAL_TIM_Base_Init
- *fill*         0x08004ea2        0x2 
+                0x08005194       0x9e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005194                HAL_TIM_Base_Init
+ *fill*         0x08005232        0x2 
  .text.HAL_TIM_Base_Start_IT
-                0x08004ea4       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08004ea4                HAL_TIM_Base_Start_IT
+                0x08005234       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005234                HAL_TIM_Base_Start_IT
  .text.HAL_TIM_PWM_Init
-                0x08004f84       0x9e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08004f84                HAL_TIM_PWM_Init
+                0x08005314       0x9e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005314                HAL_TIM_PWM_Init
  .text.HAL_TIM_PWM_MspInit
-                0x08005022       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08005022                HAL_TIM_PWM_MspInit
- *fill*         0x08005036        0x2 
+                0x080053b2       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080053b2                HAL_TIM_PWM_MspInit
+ *fill*         0x080053c6        0x2 
  .text.HAL_TIM_PWM_Start
-                0x08005038      0x190 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08005038                HAL_TIM_PWM_Start
+                0x080053c8      0x190 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080053c8                HAL_TIM_PWM_Start
  .text.HAL_TIM_IRQHandler
-                0x080051c8      0x1e0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080051c8                HAL_TIM_IRQHandler
+                0x08005558      0x1e0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005558                HAL_TIM_IRQHandler
  .text.HAL_TIM_PWM_ConfigChannel
-                0x080053a8      0x184 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080053a8                HAL_TIM_PWM_ConfigChannel
+                0x08005738      0x184 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005738                HAL_TIM_PWM_ConfigChannel
  .text.HAL_TIM_ConfigClockSource
-                0x0800552c      0x18e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x0800552c                HAL_TIM_ConfigClockSource
+                0x080058bc      0x18e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080058bc                HAL_TIM_ConfigClockSource
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x080056ba       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080056ba                HAL_TIM_OC_DelayElapsedCallback
+                0x08005a4a       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005a4a                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x080056ce       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080056ce                HAL_TIM_IC_CaptureCallback
+                0x08005a5e       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005a5e                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x080056e2       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080056e2                HAL_TIM_PWM_PulseFinishedCallback
+                0x08005a72       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005a72                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x080056f6       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080056f6                HAL_TIM_TriggerCallback
- *fill*         0x0800570a        0x2 
+                0x08005a86       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005a86                HAL_TIM_TriggerCallback
+ *fill*         0x08005a9a        0x2 
  .text.TIM_Base_SetConfig
-                0x0800570c      0x14c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x0800570c                TIM_Base_SetConfig
+                0x08005a9c      0x14c CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005a9c                TIM_Base_SetConfig
  .text.TIM_OC1_SetConfig
-                0x08005858       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005be8       0xe0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_OC2_SetConfig
-                0x08005938       0xec CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08005938                TIM_OC2_SetConfig
+                0x08005cc8       0xec CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005cc8                TIM_OC2_SetConfig
  .text.TIM_OC3_SetConfig
-                0x08005a24       0xe8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005db4       0xe8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_OC4_SetConfig
-                0x08005b0c       0xac CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005e9c       0xac CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_TI1_ConfigInputStage
-                0x08005bb8       0x5e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005f48       0x5e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_TI2_ConfigInputStage
-                0x08005c16       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08005fa6       0x60 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_ITRx_SetConfig
-                0x08005c76       0x36 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08006006       0x36 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_ETR_SetConfig
-                0x08005cac       0x40 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08005cac                TIM_ETR_SetConfig
+                0x0800603c       0x40 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x0800603c                TIM_ETR_SetConfig
  .text.TIM_CCxChannelCmd
-                0x08005cec       0x4a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08005cec                TIM_CCxChannelCmd
- *fill*         0x08005d36        0x2 
+                0x0800607c       0x4a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x0800607c                TIM_CCxChannelCmd
+ *fill*         0x080060c6        0x2 
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x08005d38       0xf8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08005d38                HAL_TIMEx_MasterConfigSynchronization
+                0x080060c8       0xf8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x080060c8                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_ConfigBreakDeadTime
-                0x08005e30       0xa4 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08005e30                HAL_TIMEx_ConfigBreakDeadTime
+                0x080061c0       0xa4 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x080061c0                HAL_TIMEx_ConfigBreakDeadTime
  .text.HAL_TIMEx_CommutCallback
-                0x08005ed4       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08005ed4                HAL_TIMEx_CommutCallback
+                0x08006264       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x08006264                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x08005ee8       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08005ee8                HAL_TIMEx_BreakCallback
+                0x08006278       0x14 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x08006278                HAL_TIMEx_BreakCallback
  .text.HAL_UART_Init
-                0x08005efc       0xa0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08005efc                HAL_UART_Init
+                0x0800628c       0xa0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800628c                HAL_UART_Init
  .text.HAL_UART_Transmit
-                0x08005f9c      0x116 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08005f9c                HAL_UART_Transmit
+                0x0800632c      0x116 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800632c                HAL_UART_Transmit
  .text.UART_WaitOnFlagUntilTimeout
-                0x080060b2       0xb2 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08006442       0xb2 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_EndRxTransfer
-                0x08006164       0xc6 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- *fill*         0x0800622a        0x2 
+                0x080064f4       0xc6 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ *fill*         0x080065ba        0x2 
  .text.UART_SetConfig
-                0x0800622c      0x4e8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080065bc      0x4e8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.SystemInit
-                0x08006714       0x24 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
-                0x08006714                SystemInit
- .text._sbrk    0x08006738       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
-                0x08006738                _sbrk
+                0x08006aa4       0x24 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+                0x08006aa4                SystemInit
+ .text._sbrk    0x08006ac8       0x6c CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
+                0x08006ac8                _sbrk
  .text.Reset_Handler
-                0x080067a4       0x50 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
-                0x080067a4                Reset_Handler
+                0x08006b34       0x50 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
+                0x08006b34                Reset_Handler
  .text.Default_Handler
-                0x080067f4        0x2 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
-                0x080067f4                RTC_Alarm_IRQHandler
-                0x080067f4                EXTI2_IRQHandler
-                0x080067f4                TIM8_CC_IRQHandler
-                0x080067f4                FMPI2C1_EV_IRQHandler
-                0x080067f4                SPI4_IRQHandler
-                0x080067f4                TIM1_CC_IRQHandler
-                0x080067f4                DMA2_Stream5_IRQHandler
-                0x080067f4                PVD_IRQHandler
-                0x080067f4                SDIO_IRQHandler
-                0x080067f4                TAMP_STAMP_IRQHandler
-                0x080067f4                CAN2_RX1_IRQHandler
-                0x080067f4                EXTI3_IRQHandler
-                0x080067f4                TIM8_TRG_COM_TIM14_IRQHandler
-                0x080067f4                TIM8_UP_TIM13_IRQHandler
-                0x080067f4                I2C3_ER_IRQHandler
-                0x080067f4                EXTI0_IRQHandler
-                0x080067f4                I2C2_EV_IRQHandler
-                0x080067f4                DMA1_Stream2_IRQHandler
-                0x080067f4                CAN1_RX0_IRQHandler
-                0x080067f4                FPU_IRQHandler
-                0x080067f4                OTG_HS_WKUP_IRQHandler
-                0x080067f4                CAN2_SCE_IRQHandler
-                0x080067f4                DMA2_Stream2_IRQHandler
-                0x080067f4                SPI1_IRQHandler
-                0x080067f4                TIM6_DAC_IRQHandler
-                0x080067f4                TIM1_BRK_TIM9_IRQHandler
-                0x080067f4                DCMI_IRQHandler
-                0x080067f4                CAN2_RX0_IRQHandler
-                0x080067f4                DMA2_Stream3_IRQHandler
-                0x080067f4                SAI2_IRQHandler
-                0x080067f4                USART6_IRQHandler
-                0x080067f4                USART3_IRQHandler
-                0x080067f4                CAN1_RX1_IRQHandler
-                0x080067f4                UART5_IRQHandler
-                0x080067f4                DMA2_Stream0_IRQHandler
-                0x080067f4                TIM4_IRQHandler
-                0x080067f4                QUADSPI_IRQHandler
-                0x080067f4                I2C1_EV_IRQHandler
-                0x080067f4                DMA1_Stream6_IRQHandler
-                0x080067f4                DMA1_Stream1_IRQHandler
-                0x080067f4                UART4_IRQHandler
-                0x080067f4                TIM3_IRQHandler
-                0x080067f4                RCC_IRQHandler
-                0x080067f4                TIM8_BRK_TIM12_IRQHandler
-                0x080067f4                Default_Handler
-                0x080067f4                CEC_IRQHandler
-                0x080067f4                EXTI15_10_IRQHandler
-                0x080067f4                ADC_IRQHandler
-                0x080067f4                DMA1_Stream7_IRQHandler
-                0x080067f4                CAN2_TX_IRQHandler
-                0x080067f4                TIM5_IRQHandler
-                0x080067f4                DMA2_Stream7_IRQHandler
-                0x080067f4                I2C3_EV_IRQHandler
-                0x080067f4                EXTI9_5_IRQHandler
-                0x080067f4                RTC_WKUP_IRQHandler
-                0x080067f4                SPDIF_RX_IRQHandler
-                0x080067f4                OTG_HS_EP1_IN_IRQHandler
-                0x080067f4                CAN1_TX_IRQHandler
-                0x080067f4                FMPI2C1_ER_IRQHandler
-                0x080067f4                EXTI4_IRQHandler
-                0x080067f4                OTG_HS_EP1_OUT_IRQHandler
-                0x080067f4                WWDG_IRQHandler
-                0x080067f4                OTG_FS_WKUP_IRQHandler
-                0x080067f4                TIM1_TRG_COM_TIM11_IRQHandler
-                0x080067f4                OTG_HS_IRQHandler
-                0x080067f4                EXTI1_IRQHandler
-                0x080067f4                USART2_IRQHandler
-                0x080067f4                I2C2_ER_IRQHandler
-                0x080067f4                DMA2_Stream1_IRQHandler
-                0x080067f4                CAN1_SCE_IRQHandler
-                0x080067f4                FLASH_IRQHandler
-                0x080067f4                DMA2_Stream4_IRQHandler
-                0x080067f4                USART1_IRQHandler
-                0x080067f4                OTG_FS_IRQHandler
-                0x080067f4                I2C1_ER_IRQHandler
-                0x080067f4                FMC_IRQHandler
-                0x080067f4                DMA2_Stream6_IRQHandler
-                0x080067f4                SAI1_IRQHandler
- *fill*         0x080067f6        0x2 
- .text.sin      0x080067f8       0xa8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_sin.o)
-                0x080067f8                sin
+                0x08006b84        0x2 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
+                0x08006b84                RTC_Alarm_IRQHandler
+                0x08006b84                EXTI2_IRQHandler
+                0x08006b84                TIM8_CC_IRQHandler
+                0x08006b84                FMPI2C1_EV_IRQHandler
+                0x08006b84                SPI4_IRQHandler
+                0x08006b84                TIM1_CC_IRQHandler
+                0x08006b84                DMA2_Stream5_IRQHandler
+                0x08006b84                PVD_IRQHandler
+                0x08006b84                SDIO_IRQHandler
+                0x08006b84                TAMP_STAMP_IRQHandler
+                0x08006b84                CAN2_RX1_IRQHandler
+                0x08006b84                EXTI3_IRQHandler
+                0x08006b84                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08006b84                TIM8_UP_TIM13_IRQHandler
+                0x08006b84                I2C3_ER_IRQHandler
+                0x08006b84                EXTI0_IRQHandler
+                0x08006b84                I2C2_EV_IRQHandler
+                0x08006b84                DMA1_Stream2_IRQHandler
+                0x08006b84                CAN1_RX0_IRQHandler
+                0x08006b84                FPU_IRQHandler
+                0x08006b84                OTG_HS_WKUP_IRQHandler
+                0x08006b84                CAN2_SCE_IRQHandler
+                0x08006b84                DMA2_Stream2_IRQHandler
+                0x08006b84                SPI1_IRQHandler
+                0x08006b84                TIM6_DAC_IRQHandler
+                0x08006b84                TIM1_BRK_TIM9_IRQHandler
+                0x08006b84                DCMI_IRQHandler
+                0x08006b84                CAN2_RX0_IRQHandler
+                0x08006b84                DMA2_Stream3_IRQHandler
+                0x08006b84                SAI2_IRQHandler
+                0x08006b84                USART6_IRQHandler
+                0x08006b84                USART3_IRQHandler
+                0x08006b84                CAN1_RX1_IRQHandler
+                0x08006b84                UART5_IRQHandler
+                0x08006b84                DMA2_Stream0_IRQHandler
+                0x08006b84                TIM4_IRQHandler
+                0x08006b84                QUADSPI_IRQHandler
+                0x08006b84                I2C1_EV_IRQHandler
+                0x08006b84                DMA1_Stream6_IRQHandler
+                0x08006b84                DMA1_Stream1_IRQHandler
+                0x08006b84                UART4_IRQHandler
+                0x08006b84                TIM3_IRQHandler
+                0x08006b84                RCC_IRQHandler
+                0x08006b84                TIM8_BRK_TIM12_IRQHandler
+                0x08006b84                Default_Handler
+                0x08006b84                CEC_IRQHandler
+                0x08006b84                EXTI15_10_IRQHandler
+                0x08006b84                ADC_IRQHandler
+                0x08006b84                DMA1_Stream7_IRQHandler
+                0x08006b84                CAN2_TX_IRQHandler
+                0x08006b84                TIM5_IRQHandler
+                0x08006b84                DMA2_Stream7_IRQHandler
+                0x08006b84                I2C3_EV_IRQHandler
+                0x08006b84                EXTI9_5_IRQHandler
+                0x08006b84                RTC_WKUP_IRQHandler
+                0x08006b84                SPDIF_RX_IRQHandler
+                0x08006b84                OTG_HS_EP1_IN_IRQHandler
+                0x08006b84                CAN1_TX_IRQHandler
+                0x08006b84                FMPI2C1_ER_IRQHandler
+                0x08006b84                EXTI4_IRQHandler
+                0x08006b84                OTG_HS_EP1_OUT_IRQHandler
+                0x08006b84                WWDG_IRQHandler
+                0x08006b84                OTG_FS_WKUP_IRQHandler
+                0x08006b84                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08006b84                OTG_HS_IRQHandler
+                0x08006b84                EXTI1_IRQHandler
+                0x08006b84                USART2_IRQHandler
+                0x08006b84                I2C2_ER_IRQHandler
+                0x08006b84                DMA2_Stream1_IRQHandler
+                0x08006b84                CAN1_SCE_IRQHandler
+                0x08006b84                FLASH_IRQHandler
+                0x08006b84                DMA2_Stream4_IRQHandler
+                0x08006b84                USART1_IRQHandler
+                0x08006b84                OTG_FS_IRQHandler
+                0x08006b84                I2C1_ER_IRQHandler
+                0x08006b84                FMC_IRQHandler
+                0x08006b84                DMA2_Stream6_IRQHandler
+                0x08006b84                SAI1_IRQHandler
+ *fill*         0x08006b86        0x2 
+ .text.sin      0x08006b88       0xa8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_sin.o)
+                0x08006b88                sin
  .text.__kernel_cos
-                0x080068a0      0x18c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_cos.o)
-                0x080068a0                __kernel_cos
- *fill*         0x08006a2c        0x4 
+                0x08006c30      0x18c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_cos.o)
+                0x08006c30                __kernel_cos
+ *fill*         0x08006dbc        0x4 
  .text.__kernel_sin
-                0x08006a30      0x174 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_sin.o)
-                0x08006a30                __kernel_sin
- *fill*         0x08006ba4        0x4 
+                0x08006dc0      0x174 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_sin.o)
+                0x08006dc0                __kernel_sin
+ *fill*         0x08006f34        0x4 
  .text.__ieee754_rem_pio2
-                0x08006ba8      0x3f8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
-                0x08006ba8                __ieee754_rem_pio2
- .text.fabs     0x08006fa0       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_fabs.o)
-                0x08006fa0                fabs
+                0x08006f38      0x3f8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
+                0x08006f38                __ieee754_rem_pio2
+ .text.fabs     0x08007330       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_fabs.o)
+                0x08007330                fabs
  .text.__kernel_rem_pio2
-                0x08006fb0      0x6b0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
-                0x08006fb0                __kernel_rem_pio2
- .text.scalbn   0x08007660       0xfc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_scalbn.o)
-                0x08007660                scalbn
- *fill*         0x0800775c        0x4 
- .text.floor    0x08007760       0xf8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_floor.o)
-                0x08007760                floor
+                0x08007340      0x6b0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
+                0x08007340                __kernel_rem_pio2
+ .text.scalbn   0x080079f0       0xfc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_scalbn.o)
+                0x080079f0                scalbn
+ *fill*         0x08007aec        0x4 
+ .text.floor    0x08007af0       0xf8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-s_floor.o)
+                0x08007af0                floor
  .text.snprintf
-                0x08007858       0x68 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-snprintf.o)
-                0x08007858                snprintf
-                0x08007858                sniprintf
- .text.memset   0x080078c0       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
-                0x080078c0                memset
- .text.__errno  0x080078d0        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
-                0x080078d0                __errno
+                0x08007be8       0x68 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-snprintf.o)
+                0x08007be8                snprintf
+                0x08007be8                sniprintf
+ .text.memset   0x08007c50       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08007c50                memset
+ .text.__errno  0x08007c60        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                0x08007c60                __errno
  .text.__libc_init_array
-                0x080078dc       0x48 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
-                0x080078dc                __libc_init_array
+                0x08007c6c       0x48 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x08007c6c                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x08007924        0x2 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08007924                __retarget_lock_acquire_recursive
+                0x08007cb4        0x2 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x08007cb4                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08007926        0x2 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08007926                __retarget_lock_release_recursive
- .text._free_r  0x08007928       0x94 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
-                0x08007928                _free_r
+                0x08007cb6        0x2 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x08007cb6                __retarget_lock_release_recursive
+ .text._free_r  0x08007cb8       0x94 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x08007cb8                _free_r
  .text.sbrk_aligned
-                0x080079bc       0x44 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x08007d4c       0x44 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x08007a00      0x100 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x08007a00                _malloc_r
+                0x08007d90      0x100 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x08007d90                _malloc_r
  .text.__malloc_lock
-                0x08007b00        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x08007b00                __malloc_lock
+                0x08007e90        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08007e90                __malloc_lock
  .text.__malloc_unlock
-                0x08007b0c        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x08007b0c                __malloc_unlock
+                0x08007e9c        0xc /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08007e9c                __malloc_unlock
  .text.__ssputs_r
-                0x08007b18       0xb6 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x08007b18                __ssputs_r
- *fill*         0x08007bce        0x2 
+                0x08007ea8       0xb6 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08007ea8                __ssputs_r
+ *fill*         0x08007f5e        0x2 
  .text._svfprintf_r
-                0x08007bd0      0x1f8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x08007bd0                _svfprintf_r
-                0x08007bd0                _svfiprintf_r
+                0x08007f60      0x1f8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08007f60                _svfprintf_r
+                0x08007f60                _svfiprintf_r
  .text._printf_common
-                0x08007dc8       0xda /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08007dc8                _printf_common
- *fill*         0x08007ea2        0x2 
+                0x08008158       0xda /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08008158                _printf_common
+ *fill*         0x08008232        0x2 
  .text._printf_i
-                0x08007ea4      0x240 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08007ea4                _printf_i
- .text.memmove  0x080080e4       0x34 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
-                0x080080e4                memmove
- .text._sbrk_r  0x08008118       0x20 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
-                0x08008118                _sbrk_r
- .text.memcpy   0x08008138       0x1c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
-                0x08008138                memcpy
+                0x08008234      0x240 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08008234                _printf_i
+ .text.memmove  0x08008474       0x34 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+                0x08008474                memmove
+ .text._sbrk_r  0x080084a8       0x20 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x080084a8                _sbrk_r
+ .text.memcpy   0x080084c8       0x1c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+                0x080084c8                memcpy
  .text._realloc_r
-                0x08008154       0x5c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reallocr.o)
-                0x08008154                _realloc_r
+                0x080084e4       0x5c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reallocr.o)
+                0x080084e4                _realloc_r
  .text._malloc_usable_size_r
-                0x080081b0       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-msizer.o)
-                0x080081b0                _malloc_usable_size_r
+                0x08008540       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-msizer.o)
+                0x08008540                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x080081c0        0x0 linker stubs
+ .glue_7        0x08008550        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080081c0        0x0 linker stubs
+ .glue_7t       0x08008550        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080081c0        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08008550        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080081c0        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080081c0                _init
- .init          0x080081c4        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08008550        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08008550                _init
+ .init          0x08008554        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080081cc        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080081cc                _fini
- .fini          0x080081d0        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080081d8                        . = ALIGN (0x4)
-                0x080081d8                        _etext = .
+ .fini          0x0800855c        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800855c                _fini
+ .fini          0x08008560        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08008568                        . = ALIGN (0x4)
+                0x08008568                        _etext = .
 
-.vfp11_veneer   0x080081d8        0x0
- .vfp11_veneer  0x080081d8        0x0 linker stubs
+.vfp11_veneer   0x08008568        0x0
+ .vfp11_veneer  0x08008568        0x0 linker stubs
 
-.v4_bx          0x080081d8        0x0
- .v4_bx         0x080081d8        0x0 linker stubs
+.v4_bx          0x08008568        0x0
+ .v4_bx         0x08008568        0x0 linker stubs
 
-.iplt           0x080081d8        0x0
- .iplt          0x080081d8        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08008568        0x0
+ .iplt          0x08008568        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080081d8      0x28c
-                0x080081d8                        . = ALIGN (0x4)
+.rodata         0x08008568      0x28c
+                0x08008568                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080081d8       0x5f CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+ .rodata        0x08008568       0x5f CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
  *(.rodata*)
- *fill*         0x08008237        0x1 
+ *fill*         0x080085c7        0x1 
  .rodata.flagBitshiftOffset.0
-                0x08008238        0x8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x080085c8        0x8 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .rodata.AHBPrescTable
-                0x08008240       0x10 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
-                0x08008240                AHBPrescTable
+                0x080085d0       0x10 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+                0x080085d0                AHBPrescTable
  .rodata.APBPrescTable
-                0x08008250        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
-                0x08008250                APBPrescTable
+                0x080085e0        0x8 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+                0x080085e0                APBPrescTable
  .rodata.npio2_hw
-                0x08008258       0x80 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
+                0x080085e8       0x80 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
  .rodata.two_over_pi
-                0x080082d8      0x108 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
- .rodata.PIo2   0x080083e0       0x40 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
+                0x08008668      0x108 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-e_rem_pio2.o)
+ .rodata.PIo2   0x08008770       0x40 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
  .rodata.init_jk
-                0x08008420       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
+                0x080087b0       0x10 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-k_rem_pio2.o)
  .rodata._svfprintf_r.str1.1
-                0x08008430       0x11 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x080087c0       0x11 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x08008441       0x22 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08008464                        . = ALIGN (0x4)
- *fill*         0x08008463        0x1 
+                0x080087d1       0x22 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x080087f4                        . = ALIGN (0x4)
+ *fill*         0x080087f3        0x1 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08008464        0x8
-                0x08008464                        __exidx_start = .
+.ARM            0x080087f4        0x8
+                0x080087f4                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08008464        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
- .ARM.exidx     0x0800846c        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x080087f4        0x8 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x080087fc        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0800846c        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x080087fc        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0800846c                        __exidx_end = .
+                0x080087fc                        __exidx_end = .
 
-.rel.dyn        0x0800846c        0x0
- .rel.iplt      0x0800846c        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080087fc        0x0
+ .rel.iplt      0x080087fc        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0800846c        0x0
-                0x0800846c                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080087fc        0x0
+                0x080087fc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800846c                        PROVIDE (__preinit_array_end = .)
+                0x080087fc                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0800846c        0x8
-                0x0800846c                        PROVIDE (__init_array_start = .)
+.init_array     0x080087fc        0x8
+                0x080087fc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800846c        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .init_array    0x08008470        0x4 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
-                0x08008474                        PROVIDE (__init_array_end = .)
+ .init_array    0x080087fc        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .init_array    0x08008800        0x4 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x08008804                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08008474        0x4
+.fini_array     0x08008804        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08008474        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08008804        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08008478                        _sidata = LOADADDR (.data)
+                0x08008808                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x64 load address 0x08008478
+.data           0x20000000       0x60 load address 0x08008808
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
  *(.data*)
  .data.masterTx
-                0x20000000        0x2 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x20000000        0x1 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
                 0x20000000                masterTx
- *fill*         0x20000002        0x2 
- .data.slaveTx  0x20000004        0x2 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
-                0x20000004                slaveTx
- *fill*         0x20000006        0x2 
+ *fill*         0x20000001        0x3 
  .data.uwTickPrio
-                0x20000008        0x4 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x20000008                uwTickPrio
+                0x20000004        0x4 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x20000004                uwTickPrio
  .data.uwTickFreq
-                0x2000000c        0x1 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x2000000c                uwTickFreq
- *fill*         0x2000000d        0x3 
+                0x20000008        0x1 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x20000008                uwTickFreq
+ *fill*         0x20000009        0x3 
  .data.SystemCoreClock
-                0x20000010        0x4 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
-                0x20000010                SystemCoreClock
+                0x2000000c        0x4 CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+                0x2000000c                SystemCoreClock
  .data._impure_ptr
-                0x20000014        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
-                0x20000014                _impure_ptr
+                0x20000010        0x4 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x20000010                _impure_ptr
  .data._impure_data
-                0x20000018       0x4c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
-                0x20000018                _impure_data
-                0x20000064                        . = ALIGN (0x4)
-                0x20000064                        _edata = .
+                0x20000014       0x4c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x20000014                _impure_data
+                0x20000060                        . = ALIGN (0x4)
+                0x20000060                        _edata = .
 
-.igot.plt       0x20000064        0x0 load address 0x080084dc
- .igot.plt      0x20000064        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x20000064                        . = ALIGN (0x4)
+.igot.plt       0x20000060        0x0 load address 0x08008868
+ .igot.plt      0x20000060        0x0 /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x20000060                        . = ALIGN (0x4)
 
-.bss            0x20000064      0x588 load address 0x080084dc
-                0x20000064                        _sbss = .
-                0x20000064                        __bss_start__ = _sbss
+.bss            0x20000060      0x58c load address 0x08008868
+                0x20000060                        _sbss = .
+                0x20000060                        __bss_start__ = _sbss
  *(.bss)
- .bss           0x20000064       0x1c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .bss           0x20000060       0x1c /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
- .bss.masterRx  0x20000080        0x2 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
-                0x20000080                masterRx
- *fill*         0x20000082        0x2 
- .bss.slaveRx   0x20000084        0x2 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+ .bss.masterRx  0x2000007c        0x1 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x2000007c                masterRx
+ *fill*         0x2000007d        0x3 
+ .bss.slaveTx   0x20000080        0x1 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                0x20000080                slaveTx
+ *fill*         0x20000081        0x3 
+ .bss.slaveRx   0x20000084        0x1 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
                 0x20000084                slaveRx
- *fill*         0x20000086        0x2 
+ *fill*         0x20000085        0x3 
  .bss.led_pwm   0x20000088        0xc CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
                 0x20000088                led_pwm
  .bss.phaseUVW  0x20000094       0x18 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
@@ -5734,7 +5736,7 @@ LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x200005ec                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200005ec      0x604 load address 0x080084dc
+                0x200005ec      0x604 load address 0x08008868
                 0x200005f0                        . = ALIGN (0x8)
  *fill*         0x200005ec        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -5891,33 +5893,33 @@ LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
 LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
-.debug_info     0x00000000    0x145ab
- .debug_info    0x00000000     0x212f CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
- .debug_info    0x0000212f      0x322 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
- .debug_info    0x00002451      0x9b5 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
- .debug_info    0x00002e06      0xa02 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
- .debug_info    0x00003808      0x70a CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
- .debug_info    0x00003f12      0x54f CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
- .debug_info    0x00004461      0x439 CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
- .debug_info    0x0000489a      0x4fb CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
- .debug_info    0x00004d95      0xd2a CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
- .debug_info    0x00005abf     0x1106 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
- .debug_info    0x00006bc5      0x94d CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
- .debug_info    0x00007512      0xa9d CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_info    0x00007faf      0x299 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_info    0x00008248     0x1525 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_info    0x0000976d      0x8ff CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_info    0x0000a06c      0x960 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
- .debug_info    0x0000a9cc      0x70b CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_info    0x0000b0d7      0x8e7 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_info    0x0000b9be      0xdaa CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_info    0x0000c768      0x99a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_info    0x0000d102     0x299d CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_info    0x0000fa9f     0x14db CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_info    0x00010f7a     0x2f4f CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_info    0x00013ec9      0x54a CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_info    0x00014413      0x168 CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
- .debug_info    0x0001457b       0x30 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
+.debug_info     0x00000000    0x145d1
+ .debug_info    0x00000000     0x2155 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+ .debug_info    0x00002155      0x322 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
+ .debug_info    0x00002477      0x9b5 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+ .debug_info    0x00002e2c      0xa02 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+ .debug_info    0x0000382e      0x70a CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
+ .debug_info    0x00003f38      0x54f CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+ .debug_info    0x00004487      0x439 CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
+ .debug_info    0x000048c0      0x4fb CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
+ .debug_info    0x00004dbb      0xd2a CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+ .debug_info    0x00005ae5     0x1106 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+ .debug_info    0x00006beb      0x94d CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
+ .debug_info    0x00007538      0xa9d CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_info    0x00007fd5      0x299 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_info    0x0000826e     0x1525 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_info    0x00009793      0x8ff CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_info    0x0000a092      0x960 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+ .debug_info    0x0000a9f2      0x70b CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_info    0x0000b0fd      0x8e7 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_info    0x0000b9e4      0xdaa CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_info    0x0000c78e      0x99a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_info    0x0000d128     0x299d CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_info    0x0000fac5     0x14db CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_info    0x00010fa0     0x2f4f CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_info    0x00013eef      0x54a CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_info    0x00014439      0x168 CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
+ .debug_info    0x000145a1       0x30 CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
 
 .debug_abbrev   0x00000000     0x3771
  .debug_abbrev  0x00000000      0x4cb CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
@@ -6197,62 +6199,62 @@ LOAD /opt/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .debug_macro   0x000274c0       0x57 CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
  .debug_macro   0x00027517      0x23c CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
 
-.debug_line     0x00000000    0x16c29
- .debug_line    0x00000000     0x1126 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
- .debug_line    0x00001126      0x73e CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
- .debug_line    0x00001864      0xe4a CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
- .debug_line    0x000026ae      0xe2b CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
- .debug_line    0x000034d9      0x79d CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
- .debug_line    0x00003c76      0x806 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
- .debug_line    0x0000447c      0x6dc CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
- .debug_line    0x00004b58      0x6b6 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
- .debug_line    0x0000520e      0x884 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
- .debug_line    0x00005a92      0x992 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
- .debug_line    0x00006424      0x71e CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
- .debug_line    0x00006b42      0x850 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_line    0x00007392      0x6b5 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x00007a47     0x1cc6 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_line    0x0000970d      0xd39 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_line    0x0000a446     0x13a9 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
- .debug_line    0x0000b7ef      0xb1a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_line    0x0000c309      0xf12 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_line    0x0000d21b      0xc94 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_line    0x0000deaf      0x9a2 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_line    0x0000e851     0x373e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_line    0x00011f8f     0x1998 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_line    0x00013927     0x28a5 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_line    0x000161cc      0x72a CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_line    0x000168f6      0x2b9 CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
- .debug_line    0x00016baf       0x7a CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
+.debug_line     0x00000000    0x16c35
+ .debug_line    0x00000000     0x1132 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+ .debug_line    0x00001132      0x73e CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
+ .debug_line    0x00001870      0xe4a CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+ .debug_line    0x000026ba      0xe2b CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+ .debug_line    0x000034e5      0x79d CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
+ .debug_line    0x00003c82      0x806 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+ .debug_line    0x00004488      0x6dc CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
+ .debug_line    0x00004b64      0x6b6 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
+ .debug_line    0x0000521a      0x884 CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+ .debug_line    0x00005a9e      0x992 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+ .debug_line    0x00006430      0x71e CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
+ .debug_line    0x00006b4e      0x850 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_line    0x0000739e      0x6b5 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x00007a53     0x1cc6 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_line    0x00009719      0xd39 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_line    0x0000a452     0x13a9 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+ .debug_line    0x0000b7fb      0xb1a CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_line    0x0000c315      0xf12 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_line    0x0000d227      0xc94 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_line    0x0000debb      0x9a2 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_line    0x0000e85d     0x373e CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_line    0x00011f9b     0x1998 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_line    0x00013933     0x28a5 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_line    0x000161d8      0x72a CMakeFiles/odrive_make_project.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_line    0x00016902      0x2b9 CMakeFiles/odrive_make_project.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x00016bbb       0x7a CMakeFiles/odrive_make_project.dir/startup_stm32f446xx.s.obj
 
 .debug_str      0x00000000    0xd9fd7
- .debug_str     0x00000000    0xd5390 CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
-                              0xd5aea (size before relaxing)
- .debug_str     0x000d5390       0x68 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
+ .debug_str     0x00000000    0xd53ab CMakeFiles/odrive_make_project.dir/Src/main.cpp.obj
+                              0xd5b05 (size before relaxing)
+ .debug_str     0x000d53ab       0x68 CMakeFiles/odrive_make_project.dir/Lib/LED/Src/LED.cpp.obj
                               0xcb682 (size before relaxing)
- .debug_str     0x000d53f8       0x93 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
+ .debug_str     0x000d5413       0x93 CMakeFiles/odrive_make_project.dir/Lib/LED_PWM/Src/LED_PWM.cpp.obj
                               0xd4b52 (size before relaxing)
- .debug_str     0x000d548b       0x95 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
+ .debug_str     0x000d54a6       0x95 CMakeFiles/odrive_make_project.dir/Lib/ThreePhasePWM/Src/ThreePhasePWM.cpp.obj
                               0xd4690 (size before relaxing)
- .debug_str     0x000d5520       0x91 CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
+ .debug_str     0x000d553b       0x91 CMakeFiles/odrive_make_project.dir/Lib/UART/Src/UART_Handler.cpp.obj
                               0xce722 (size before relaxing)
- .debug_str     0x000d55b1      0x736 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
+ .debug_str     0x000d55cc      0x736 CMakeFiles/odrive_make_project.dir/Core/Src/main.c.obj
                               0xcdc03 (size before relaxing)
- .debug_str     0x000d5ce7       0x82 CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
+ .debug_str     0x000d5d02       0x82 CMakeFiles/odrive_make_project.dir/Core/Src/gpio.c.obj
                               0xcaee9 (size before relaxing)
- .debug_str     0x000d5d69      0x571 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
+ .debug_str     0x000d5d84      0x571 CMakeFiles/odrive_make_project.dir/Core/Src/dma.c.obj
                               0xcb37c (size before relaxing)
- .debug_str     0x000d62da       0xea CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
+ .debug_str     0x000d62f5       0xea CMakeFiles/odrive_make_project.dir/Core/Src/spi.c.obj
                               0xcb94d (size before relaxing)
- .debug_str     0x000d63c4      0x2d4 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
+ .debug_str     0x000d63df      0x2d4 CMakeFiles/odrive_make_project.dir/Core/Src/tim.c.obj
                               0xcbc87 (size before relaxing)
- .debug_str     0x000d6698       0x7c CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
+ .debug_str     0x000d66b3       0x7c CMakeFiles/odrive_make_project.dir/Core/Src/usart.c.obj
                               0xcb3a6 (size before relaxing)
- .debug_str     0x000d6714      0x1e6 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_str     0x000d672f      0x1e6 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_it.c.obj
                               0xcb601 (size before relaxing)
- .debug_str     0x000d68fa       0x57 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_str     0x000d6915       0x57 CMakeFiles/odrive_make_project.dir/Core/Src/stm32f4xx_hal_msp.c.obj
                               0xcae1e (size before relaxing)
- .debug_str     0x000d6951      0x57d CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_str     0x000d696c      0x562 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
                               0xcb60f (size before relaxing)
  .debug_str     0x000d6ece      0x2b0 CMakeFiles/odrive_make_project.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
                               0xcb1af (size before relaxing)
